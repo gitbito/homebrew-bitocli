@@ -6,10 +6,10 @@ class BitoCliLinuxX86 < Formula
   license ""
 
   def install
-    bin.install "bito-linux-x86"
+    bin.install "bito"
   end
 
   test do
-    system "#{bin}/bito-linux-x86"
+    system "#{bin}/bito"
   end
 end
