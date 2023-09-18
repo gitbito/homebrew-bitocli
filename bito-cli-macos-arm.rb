@@ -1,4 +1,4 @@
-class BitoCliLinuxX86 < Formula
+class BitoCliMacosArm < Formula
   desc "Bito CLI for MacOS Arm based architecure"
   homepage "https://github.com/gitbito/CLI"
   url "https://github.com/gitbito/CLI/releases/download/vm3.4.0/bito-macos-arm.tar.gz"
