@@ -1,9 +1,9 @@
 class BitoLinuxX86 < Formula
-  desc "Bito CLI for Linux x86 based architecure with new version 3.5 for test"
-  version "3.5.0"
+  desc "Bito CLI for Linux x86 based architecure with new version 3.6 for test"
+  version "3.6.0"
   homepage "https://github.com/gitbito/CLI"
-  url "https://github.com/gitbito/CLI/releases/download/v3.5.0/bito-linux-x86.tar.gz"
-  sha256 "27c4f990012a7f282498162ad03f160d6b6bcf00b146c7e1048ec79cdcf15d79"
+  url "https://github.com/gitbito/CLI/releases/download/v3.6.0/bito-linux-x86.tar.gz"
+  sha256 "0af57fd8376d6d62ba2f62ff6be1b022d2220989483d5154d4380c5430176b94"
   license ""
 
   def install
