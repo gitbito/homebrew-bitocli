@@ -7,10 +7,9 @@ class BitoLinuxX86AT31 < Formula
 
   def install
     # Unlink the previous version if it exists
-      rm "#{bin}/bito"
-      ohai "Unlinked previous version: #{old_link}"
-    end
-
+    rm "#{bin}/bito"
+    ohai "Unlinked previous version: #{old_link}"
+    
     bin.install "bito-linux-x86" => "bito"
     bin.install_symlink "bito-linux-x86" => "bito"
   end
