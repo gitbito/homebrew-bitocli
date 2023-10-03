@@ -21,7 +21,7 @@ class BitoLinuxX86AT31 < Formula
     old_symlink.unlink if old_symlink.exist?
     
     # Create a new symlink pointing to the installed version
-    bin.install_symlink "bito-linux-x86" => "bito"
+    bin.install_symlink "#{bin}/bito" => "bito"
   end
 
   def post_upgrade
