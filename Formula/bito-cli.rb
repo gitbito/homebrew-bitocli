@@ -32,7 +32,7 @@ class BitoLinuxX86AT31 < Formula
             installArch = "arm"
         end
 
-        url "https://github.com/gitbito/CLI/releases/download/v3.1.0/bito-#{installOS}-#{installArch}.tar.gz"
+        url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
 
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
     end
