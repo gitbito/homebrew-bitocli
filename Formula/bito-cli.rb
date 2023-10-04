@@ -1,4 +1,4 @@
-class BitoLinuxX86AT31 < Formula
+class BitoCli < Formula
     desc "Bito CLI for Linux x86 based architecure with version 3.1 for test"
     version "3.1.0"
     homepage "https://github.com/gitbito/CLI"
