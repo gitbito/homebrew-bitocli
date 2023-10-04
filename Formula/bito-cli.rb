@@ -1,8 +1,8 @@
 class BitoCli < Formula
-    desc "Bito CLI for Linux x86 based architecure with version 3.1 for test"
-    version "3.1.0"
+    desc "Bito CLI for Linux x86 based architecure with version 3.6 for test"
+    version "3.6.0"
     homepage "https://github.com/gitbito/CLI"
-    sha256 "5552b20267454b2b959a60a4cda01f060bfa4fe75beef963cec8e5ac6fd5405f"
+    sha256 "0af57fd8376d6d62ba2f62ff6be1b022d2220989483d5154d4380c5430176b94"
     license ""
   
     installOS=""
