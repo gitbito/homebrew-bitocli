@@ -26,7 +26,7 @@ class BitoCli < Formula
         installArch = "arm"
     end
 
-    url "https://github.com/gitbito/CLI/releases/download/vmx86#{version}/bito-#{installOS}-#{installArch}.tar.gz"
+    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
     
     def install
 
