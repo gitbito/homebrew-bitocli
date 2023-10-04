@@ -5,7 +5,7 @@ class BitoCli < Formula
     sha256 "5552b20267454b2b959a60a4cda01f060bfa4fe75beef963cec8e5ac6fd5405f"
     license ""
   
-    installOS=""
+    @installOS=""
     installArch=""
 
     # Detect machine OS
@@ -14,9 +14,9 @@ class BitoCli < Formula
     ohai "unos: #{unos}"
 
     if unos == "Darwin"
-        installOS = "macos"
+        @installOS = "macos"
     elsif unos == "Linux"
-        installOS = "linux"
+        @installOS = "linux"
     end
 
     # Detect machine architecture type
@@ -30,10 +30,10 @@ class BitoCli < Formula
         installArch = "arm"
     end
 
-    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
+    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{@installOS}-#{installArch}.tar.gz"
     
     def install
-      bin.install "bito-#{installOS}-#{installArch}" => "bito"
+      bin.install "bito-#{@installOS}-#{installArch}" => "bito"
     end
   
     test do
