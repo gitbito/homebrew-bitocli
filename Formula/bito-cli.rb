@@ -1,6 +1,6 @@
 class BitoCli < Formula
     desc "Bito CLI for Linux x86 based architecure with version 3.6 for test"
-    version "3.6.0"
+    version "3.4.0"
     homepage "https://github.com/gitbito/CLI"
     sha256 "0af57fd8376d6d62ba2f62ff6be1b022d2220989483d5154d4380c5430176b94"
     license ""
@@ -26,7 +26,7 @@ class BitoCli < Formula
         installArch = "arm"
     end
 
-    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
+    url "https://github.com/gitbito/CLI/releases/download/vmx86#{version}/bito-#{installOS}-#{installArch}.tar.gz"
     
     def install
 
