@@ -26,6 +26,16 @@ class BitoCli < Formula
         installArch = "arm"
     end
 
+    if installOS == "linux" && installArch == "x86"
+        sha256 "61ae30565853704954286a2c2cf0d3cd0d8a8d1f7c7000c03f78237a09e0ab57"
+    elsif installOS == "macos" && installArch == "x86"
+        sha256 "c65f5c75f858ce399488b4f91f97b5dab8d04a7732b344e9f706971f0a2d718c"
+    elsif installOS == "linux" && installArch == "arm"
+        sha256 "87d8e6d1e66367cb349d2800ac5e2c0de597400de632c7370264ad593eea56a7"
+    elsif installOS == "macos" && installArch == "arm"
+        sha256 "440d37315019b51c2b8535c8a3a1d0c9dcd527b2aa779e2662f336e8770ead5e"
+    end
+
     url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
     
     def install
