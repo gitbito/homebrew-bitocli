@@ -2,7 +2,7 @@ class BitoCli < Formula
     desc "Bito CLI for Linux x86 based architecure with version 3.1 for test"
     version "3.1.0"
     homepage "https://github.com/gitbito/CLI"
-    url ""
+    url "https://github.com/gitbito/CLI/releases/download/"
     sha256 "5552b20267454b2b959a60a4cda01f060bfa4fe75beef963cec8e5ac6fd5405f"
     license ""
   
