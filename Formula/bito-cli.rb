@@ -22,7 +22,7 @@ class BitoCli < Formula
     ohai "unmacarch: #{unmacarch}"
     if unmacarch == "x86_64"
         installArch = "x86"
-    elsif unmacarch == "arm"
+    elsif unmacarch == "arm" || unmacarch == "arm64"
         installArch = "arm"
     end
 
@@ -59,7 +59,7 @@ class BitoCli < Formula
       ohai "unmacarch: #{unmacarch}"
       if unmacarch == "x86_64"
           installArch = "x86"
-      elsif unmacarch == "arm"
+      elsif unmacarch == "arm" || unmacarch == "arm64"
           installArch = "arm"
       end
   
