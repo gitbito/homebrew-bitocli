@@ -1,6 +1,6 @@
 class BitoCli < Formula
     desc "Bito CLI for Linux x86 based architecure with version 3.6 for test"
-    version "3.1.0"
+    version "3.5.0"
     homepage "https://github.com/gitbito/CLI"
     license ""
 
@@ -37,7 +37,7 @@ class BitoCli < Formula
     elsif installOS == "linux" && installArch == "arm"
       sha256 "87d8e6d1e66367cb349d2800ac5e2c0de597400de632c7370264ad593eea56a7"
     elsif installOS == "macos" && installArch == "arm"
-      sha256 "82b1aff8d3e006a632dc3e10c62efefe26eb0c1cebfa1952764bfde77cf4c1aa"
+      sha256 "fec2beaf87ab5d4e49bd56bc49b5ec9ba54df245d86bad5e67a4975166135862"
     end
 
      url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
