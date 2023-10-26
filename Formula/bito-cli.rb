@@ -1,6 +1,6 @@
 class BitoCli < Formula
     desc "Bito CLI for Linux x86 based architecure with version 3.6 for test"
-    version "3.5.0"
+    version "3.6.0"
     homepage "https://github.com/gitbito/CLI"
     license ""
 
