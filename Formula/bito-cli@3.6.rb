@@ -4,6 +4,7 @@ class BitoCli < Formula
     homepage "https://github.com/gitbito/CLI"
     license ""
 
+    
      def self.set_arch_and_os
       installOS=""
       installArch=""
