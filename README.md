@@ -16,4 +16,4 @@ This is the official repository or tap for Bito CLI to support installation via 
 
 ## License ##
 
-Copyright (C) 2021, Bito Inc - All Rights Reserved
+Copyright (C) 2021, Bito Inc - All Rights Reserved 
