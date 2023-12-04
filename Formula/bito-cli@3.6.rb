@@ -1,4 +1,4 @@
-class BitoCli < Formula
+class BitoCliAT36 < Formula
     desc "Bito CLI Version 3.6"
     version "3.6.0"
     homepage "https://github.com/gitbito/CLI"
