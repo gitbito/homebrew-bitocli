@@ -1,6 +1,6 @@
 class BitoCli < Formula
-    desc "Bito CLI Version 3.8"
-    version "3.8.0"
+    desc "Bito CLI Version 3.9"
+    version "3.9.0"
     homepage "https://github.com/gitbito/CLI"
     license ""
 
@@ -32,13 +32,13 @@ class BitoCli < Formula
      installOS, installArch = self.set_arch_and_os
 
      if installOS == "linux" && installArch == "x86"
-      sha256 "0f001140a91ae082a8d176db211d1fb60b7c34667385466959d125b818537807"
+      sha256 "776861ffb66a700f6d3e918c87c9e9f0b3dec67df36c291d30dfd38a882b5d5a"
     elsif installOS == "macos" && installArch == "x86"
-      sha256 "2501063bf749c22b5c1e95e2236898b420a66a91018b8d5edfd5d2a251516c66"
+      sha256 "042569f032cc0d317ad001d216d81e31647c052c956f5d40ad2e192177d660cd"
     elsif installOS == "linux" && installArch == "arm"
-      sha256 "ce07bdd0c624b63920eec40071fcf8a9f218decd1a4e00807f53879f82a4d565"
+      sha256 "29bbf70fd691ae02d4a065e6284d002c6707aae8391e94516b65a5994ea67858"
     elsif installOS == "macos" && installArch == "arm"
-      sha256 "adca8b017a3a3ef5139b0a10d9b94f191d8a5c569082fe38c28ab4b4160dff50"
+      sha256 "33480d805fde6994acfaea924224282e899375b557da8fccb453224043185e11"
     end
 
      url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
