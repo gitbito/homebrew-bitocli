@@ -69,7 +69,7 @@ class BitoCli < Formula
       system "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
 
       # Move the supported_files to the prefix directory
-      prefix.install "#{supported_files}"
+      FileUtils.mv("#{supported_files}", "#{prefix}")
     end
 
      test do
