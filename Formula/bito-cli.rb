@@ -51,6 +51,7 @@ class BitoCli < Formula
       supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
  
       lca_bundle = "bito-lca-#{installOS}.tar.gz"
+      renew_lca_bundle = "bito-lca"
       supported_files = "slashCommands.json"
 
       # Get current user's information
@@ -67,6 +68,8 @@ class BitoCli < Formula
 
       # Unpack the lca_bundle tar.gz file
       system "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
+       # Rename the lca_bundle before unpacking
+      system "mv", lca_bundle, renew_lca_bundle
 
       # Move the supported_files to the prefix directory
       FileUtils.mv("#{supported_files}", "#{prefix}")
