@@ -56,12 +56,13 @@ class BitoCli < Formula
 
       # Get current user's information
       user_info = Etc.getpwuid
-
       # Extract home directory from user information
       home_directory = user_info.dir
-
       prefix = home_directory+"/.bitoai/etc"
   
+      # Create the directory if it doesn't exist
+      FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
+
       # Use curl to download files
       system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
       system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
@@ -73,6 +74,9 @@ class BitoCli < Formula
 
       # Move the supported_files to the prefix directory
       FileUtils.mv("#{supported_files}", "#{prefix}")
+
+      # Change the permissions of the directory and all its contents
+      FileUtils.chmod_R(0777, directory_path)
     end
 
      test do
