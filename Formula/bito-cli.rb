@@ -76,7 +76,7 @@ class BitoCli < Formula
       FileUtils.mv("#{supported_files}", "#{prefix}")
 
       # Change the permissions of the directory and all its contents
-      FileUtils.chmod_R(0777, directory_path)
+      FileUtils.chmod_R(0777, prefix)
     end
 
      test do
