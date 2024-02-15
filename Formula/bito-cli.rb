@@ -52,7 +52,14 @@ class BitoCli < Formula
  
       lca_bundle = "bito-lca-#{installOS}.tar.gz"
       supported_files = "slashCommands.json"
-      prefix = ENV['HOME']+"/.bitoai/etc"
+
+      # Get current user's information
+      user_info = Etc.getpwuid
+
+      # Extract home directory from user information
+      home_directory = user_info.dir
+
+      prefix = home_directory+"/.bitoai/etc"
   
       # Use curl to download files
       system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
