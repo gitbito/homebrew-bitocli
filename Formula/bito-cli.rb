@@ -52,7 +52,7 @@ class BitoCli < Formula
  
       lca_bundle = "bito-lca-#{installOS}.tar.gz"
       supported_files = "slashCommands.json"
-      prefix = Dir.home+".bitoai/etc"
+      prefix = File.expand_path('~')+"/.bitoai/etc"
   
       # Use curl to download files
       system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
