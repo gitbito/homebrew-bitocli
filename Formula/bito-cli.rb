@@ -42,13 +42,14 @@ class BitoCli < Formula
     end
 
      url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
-     lca_bundle_url "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
-     supported_files_url "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
 
      def install
       installOS, installArch = self.class.set_arch_and_os
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
 
+      lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
+      supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
+ 
       lca_bundle = "bito-lca-#{installOS}.tar.gz"
       supported_files = "slashCommands.json"
       prefix = "~/.bitoai/etc"
