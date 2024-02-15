@@ -79,6 +79,7 @@ class BitoCli < Formula
       FileUtils.chmod_R(0777, prefix)
 
       # Remove the directory and its contents
+      puts "Deleting: #{bin}/bito"
       FileUtils.remove_dir("#{bin}/bito", true)
 
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
