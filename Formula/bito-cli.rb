@@ -78,11 +78,10 @@ class BitoCli < Formula
       # Change the permissions of the directory and all its contents
       FileUtils.chmod_R(0777, prefix)
 
-      # Remove the directory and its contents
-      puts "Deleting: #{bin}/bito"
-      FileUtils.remove_dir("#{bin}/bito", true)
-
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
+      
+      # Run the brew link command for bito-cli
+      system("brew link bito-cli")
     end
 
      test do
