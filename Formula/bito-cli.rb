@@ -78,6 +78,11 @@ class BitoCli < Formula
       # Change the permissions of the directory and all its contents
       FileUtils.chmod_R(0777, prefix)
 
+      # Check if the file exists and then delete it
+      if File.exist?("#{bin}/bito")
+        File.delete("#{bin}/bito")
+      end
+
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
     end
 
