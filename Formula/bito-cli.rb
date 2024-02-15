@@ -1,6 +1,6 @@
 class BitoCli < Formula
-    desc "Bito CLI Version 3.9"
-    version "3.9.0"
+    desc "Bito CLI Version 4.0"
+    version "4.0.0"
     homepage "https://github.com/gitbito/CLI"
     license ""
 
@@ -32,20 +32,36 @@ class BitoCli < Formula
      installOS, installArch = self.set_arch_and_os
 
      if installOS == "linux" && installArch == "x86"
-      sha256 "776861ffb66a700f6d3e918c87c9e9f0b3dec67df36c291d30dfd38a882b5d5a"
+      sha256 "f0f71dad2083c71e2faa2c856233b81deb3ff3daf74b60d890d88988153d72e3"
     elsif installOS == "macos" && installArch == "x86"
-      sha256 "042569f032cc0d317ad001d216d81e31647c052c956f5d40ad2e192177d660cd"
+      sha256 "26c706a60b735250caa525a1effa47875d392d1f351585e35b7b7d129b48eadf"
     elsif installOS == "linux" && installArch == "arm"
-      sha256 "29bbf70fd691ae02d4a065e6284d002c6707aae8391e94516b65a5994ea67858"
+      sha256 "513d4e2352542a8876d88bed05dec6dbdead90cf99b15ddd83a180ce24668122"
     elsif installOS == "macos" && installArch == "arm"
-      sha256 "33480d805fde6994acfaea924224282e899375b557da8fccb453224043185e11"
+      sha256 "79a8f1f9022848e01ab1380655162653735f997de8099f861b925f0fd4689a4f"
     end
 
      url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
-     
+     lca_bundle_url "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
+     supported_files_url "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
+
      def install
       installOS, installArch = self.class.set_arch_and_os
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
+
+      lca_bundle = "bito-lca-#{installOS}.tar.gz"
+      supported_files = "slashCommands.json"
+      prefix = "~/.bitoai/etc"
+  
+      # Use curl to download files
+      system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
+      system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
+
+      # Unpack the lca_bundle tar.gz file
+      system "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
+
+      # Move the supported_files to the prefix directory
+      prefix.install "#{supported_files}"
     end
 
      test do
