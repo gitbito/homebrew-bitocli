@@ -70,7 +70,7 @@ class BitoCli < Formula
       # Unpack the lca_bundle tar.gz file
       system "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
        # Rename the lca_bundle before unpacking
-      system "mv", "#{prefix}"+lca_os_specific, "#{prefix}"+renew_lca_bundle
+      system "mv", "#{prefix}"+"/"+lca_os_specific, "#{prefix}"+"/"+renew_lca_bundle
 
       # Move the supported_files to the prefix directory
       FileUtils.mv("#{supported_files}", "#{prefix}")
