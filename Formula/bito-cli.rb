@@ -45,42 +45,7 @@ class BitoCli < Formula
    
    def install
     installOS, installArch = self.class.set_arch_and_os
-
-    lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
-      supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
- 
-      lca_bundle = "bito-lca-#{installOS}.tar.gz"
-      lca_os_specific = "bito-lca-#{installOS}"
-      renew_lca_bundle = "bito-lca"
-      supported_files = "slashCommands.json"
-
-      # Get current user's information
-      user_info = Etc.getpwuid
-      # Extract home directory from user information
-      home_directory = user_info.dir
-      prefix = home_directory+"/.bitoai/etc"
-  
-      # Create the directory if it doesn't exist
-      FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
-      # Change the permissions of the directory and all its contents
-      system "sudo" , "chmod" , "-R", "0777", "#{prefix}"
-      
-      # Use curl to download files
-      system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
-      system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
-
-      # Unpack the lca_bundle tar.gz file
-      system "sudo", "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
-       # Rename the lca_bundle before unpacking
-      system "sudo" ,"mv", "#{prefix}"+"/"+lca_os_specific, "#{prefix}"+"/"+renew_lca_bundle
-
-      # Move the supported_files to the prefix directory
-      system "sudo" , "mv", "#{supported_files}", "#{prefix}"
-
-      bin.install "bito-#{installOS}-#{installArch}" => "bito"
-      
-      # Run the brew link command for bito-cli
-      system("brew link bito-cli")
+    bin.install "bito-#{installOS}-#{installArch}" => "bito"
   end
 
    test do
