@@ -62,7 +62,9 @@ class BitoCli < Formula
   
       # Create the directory if it doesn't exist
       FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
-
+      # Change the permissions of the directory and all its contents
+      system "sudo" , "chmod" , "-R", "0777", "#{prefix}"
+      
       # Use curl to download files
       system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
       system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
@@ -74,9 +76,6 @@ class BitoCli < Formula
 
       # Move the supported_files to the prefix directory
       system "sudo" , "mv", "#{supported_files}", "#{prefix}"
-
-      # Change the permissions of the directory and all its contents
-      system "sudo" , "chmod" , "-R", "0777", "#{prefix}"
 
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
       
