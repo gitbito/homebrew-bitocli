@@ -51,6 +51,7 @@ class BitoCli < Formula
   end
 
   def post_install 
+    puts "Running post_install"
     lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
     supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
 
