@@ -58,7 +58,7 @@ class BitoCli < Formula
       user_info = Etc.getpwuid
       # Extract home directory from user information
       home_directory = user_info.dir
-      prefix = home_directory+"/.bitoai/etc/"
+      prefix = home_directory+"/.bitoai/etc"
   
       # Create the directory if it doesn't exist
       FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
