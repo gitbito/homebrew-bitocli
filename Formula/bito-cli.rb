@@ -52,6 +52,33 @@ class BitoCli < Formula
 
   def post_install 
    puts "Running post_install"
+   
+   def self.set_arch_and_os
+    installOS=""
+    installArch=""
+
+     # Detect machine OS
+    unos = `uname`.chomp
+    ohai "unos: #{unos}"
+    if unos == "Darwin"
+        installOS = "macos"
+    elsif unos == "Linux"
+        installOS = "linux"
+    end
+
+     # Detect machine architecture type
+    unmacarch = `uname -m`.chomp
+    ohai "unmacarch: #{unmacarch}"
+    if unmacarch == "x86_64"
+        installArch = "x86"
+    elsif unmacarch == "arm" || unmacarch == "arm64"
+        installArch = "arm"
+    end
+     [installOS, installArch]
+    end
+
+   installOS, installArch = self.set_arch_and_os
+
    lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
    supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
 
