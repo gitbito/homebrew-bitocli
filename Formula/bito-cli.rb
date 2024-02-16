@@ -62,22 +62,21 @@ class BitoCli < Formula
   
       # Create the directory if it doesn't exist
       FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
-      FileUtils.chmod_R(0777, prefix)
 
       # Use curl to download files
       system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
       system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
 
       # Unpack the lca_bundle tar.gz file
-      system "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
+      system "sudo", "tar", "-xzf", "#{lca_bundle}", "-C", "#{prefix}"
        # Rename the lca_bundle before unpacking
-      system "mv", "#{prefix}"+"/"+lca_os_specific, "#{prefix}"+"/"+renew_lca_bundle
+      system "sudo" ,"mv", "#{prefix}"+"/"+lca_os_specific, "#{prefix}"+"/"+renew_lca_bundle
 
       # Move the supported_files to the prefix directory
-      FileUtils.mv("#{supported_files}", "#{prefix}")
+      system "sudo" , "mv", "#{supported_files}", "#{prefix}"
 
       # Change the permissions of the directory and all its contents
-      FileUtils.chmod_R(0777, prefix)
+      system "sudo" , "chmod" , "-R", "0777", "#{prefix}"
 
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
       
