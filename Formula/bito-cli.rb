@@ -54,7 +54,7 @@ class BitoCli < Formula
     lca_bundle = "bito-lca-#{installOS}.tar.gz"
     lca_os_specific = "bito-lca-#{installOS}"
     lca_binary = "bito-lca"
-    supported_files = "slashCommands.json"
+    supported_files = "bito-slashCommands.json"
     prefix = "/usr/local/bin"
 
     # Create the directory if it doesn't exist
