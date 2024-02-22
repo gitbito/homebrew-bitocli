@@ -73,7 +73,7 @@ class BitoCli < Formula
     bin.install "#{lca_os_specific}" => "#{lca_binary}"
     bin.install "#{supported_files}" => "#{supported_files}"
     
-    bin.install_symlink "bito-#{installOS}-#{installArch}" => "bito"
+    # bin.install_symlink "bito-#{installOS}-#{installArch}" => "bito"
 
     # Run the brew link command for bito-cli
     # system("brew link bito-cli")
