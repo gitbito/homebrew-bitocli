@@ -78,7 +78,7 @@ class BitoCli < Formula
     bin.install "#{supported_files}" => "#{supported_files}"
 
     # Run the brew link command for bito-cli
-    # system("brew link --overwrite bito-cli")
+    system("brew link bito-cli")
   end
 
   test do
