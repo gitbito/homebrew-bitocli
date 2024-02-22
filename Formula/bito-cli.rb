@@ -46,7 +46,6 @@ class BitoCli < Formula
      def install
       installOS, installArch = self.class.set_arch_and_os
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
-      bin.install_symlink "bito-#{installOS}-#{installArch}" => "bito"
     end
 
      test do
