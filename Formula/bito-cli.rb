@@ -46,9 +46,7 @@ class BitoCli < Formula
      def install
       installOS, installArch = self.class.set_arch_and_os
       bin.install "bito-#{installOS}-#{installArch}" => "bito"
-
-      # Run the brew link command for bito-cli
-      system("brew link --overwrite bito-cli")
+      bin.install_symlink "bito-#{installOS}-#{installArch}" => "bito"
     end
 
      test do
