@@ -48,13 +48,14 @@ class BitoCli < Formula
 
     puts("Post installation script")
 
-    lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
-    supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
-
-    lca_bundle = "bito-lca-#{installOS}.tar.gz"
-    lca_os_specific = "bito-lca-#{installOS}"
     lca_binary = "bito-lca"
     supported_files = "bito-slashCommands.json"
+    lca_bundle = "bito-lca-#{installOS}.tar.gz"
+
+    lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/#{lca_bundle}"
+    supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/#{supported_files}"
+
+    lca_os_specific = "bito-lca-#{installOS}"
     prefix = "/usr/local/bin"
 
     # Create the directory if it doesn't exist
