@@ -73,13 +73,12 @@ class BitoCli < Formula
     # # Move the supported_files to the prefix directory
     # system "mv", "#{supported_files}", "#{prefix}"
 	
-    # Run the brew link command for bito-cli
-    system("brew link --overwrite bito-cli")
-
     bin.install "bito-#{installOS}-#{installArch}" => "bito"
     bin.install "#{lca_os_specific}" => "#{lca_binary}"
     bin.install "#{supported_files}" => "#{supported_files}"
 
+    # Run the brew link command for bito-cli
+    # system("brew link --overwrite bito-cli")
   end
 
   test do
