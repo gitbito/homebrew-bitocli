@@ -1,6 +1,6 @@
 class BitoCli < Formula
-  desc "Bito CLI Version 4.0"
-  version "4.0.0"
+  desc "Bito CLI Version 3.9"
+  version "3.9.0"
   homepage "https://github.com/gitbito/CLI"
   license ""
 
@@ -32,51 +32,23 @@ class BitoCli < Formula
    installOS, installArch = self.set_arch_and_os
 
    if installOS == "linux" && installArch == "x86"
-    sha256 "704862dd4a517cdef73bdd7e2aafffed4b99f79c79a9a6a4676d75ec5d581bab"
+    sha256 "776861ffb66a700f6d3e918c87c9e9f0b3dec67df36c291d30dfd38a882b5d5a"
   elsif installOS == "macos" && installArch == "x86"
-    sha256 "dc3c48c6ccb688790e8d3cba0f5e56539e5fba191f56bcf158526d17cfb1d8e2"
+    sha256 "042569f032cc0d317ad001d216d81e31647c052c956f5d40ad2e192177d660cd"
   elsif installOS == "linux" && installArch == "arm"
-    sha256 "1665bb406c96652913f2abe7a1565c4ef3dd37c3e0edab1565f84fc1fa99c595"
+    sha256 "29bbf70fd691ae02d4a065e6284d002c6707aae8391e94516b65a5994ea67858"
   elsif installOS == "macos" && installArch == "arm"
-    sha256 "59d0fac840385f08fc8b2d95f4bf7347a58a99439fdef0b65af9a47dabb70eb0"
+    sha256 "33480d805fde6994acfaea924224282e899375b557da8fccb453224043185e11"
   end
 
    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
    
    def install
     installOS, installArch = self.class.set_arch_and_os
-
-    puts("Post installation script")
-
-    lca_bundle_url = "https://github.com/gitbito/CLI/releases/download/packages/bito-lca-#{installOS}.tar.gz"
-    supported_files_url = "https://github.com/gitbito/CLI/releases/download/packages/slashCommands.json"
-
-    lca_bundle = "bito-lca-#{installOS}.tar.gz"
-    lca_os_specific = "bito-lca-#{installOS}"
-    lca_binary = "bito-lca"
-    supported_files = "bito-slashCommands.json"
-    prefix = "/usr/local/bin"
-
-    # Create the directory if it doesn't exist
-    FileUtils.mkdir_p(prefix) unless Dir.exist?(prefix)
-    # Change the permissions of the directory and all its contents
-      
-    # Use curl to download files
-    system "curl", "-L", "#{lca_bundle_url}", "-o", "#{lca_bundle}"
-    system "curl", "-L", "#{supported_files_url}", "-o", "#{supported_files}"
-
-    # Unpack the lca_bundle tar.gz file
-    system "tar", "-xzf", "#{lca_bundle}"
-  
     bin.install "bito-#{installOS}-#{installArch}" => "bito"
-    bin.install "#{lca_os_specific}" => "#{lca_binary}"
-    bin.install "#{supported_files}" => "#{supported_files}"
-
-    # Run the brew link command for bito-cli
-    # system("brew link --overwrite bito-cli")
   end
 
-  test do
+   test do
     system "#{bin}/bito"
   end
 end
