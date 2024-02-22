@@ -32,13 +32,13 @@ class BitoCli < Formula
    installOS, installArch = self.set_arch_and_os
 
    if installOS == "linux" && installArch == "x86"
-    sha256 "704862dd4a517cdef73bdd7e2aafffed4b99f79c79a9a6a4676d75ec5d581bab"
+    sha256 "1b7acd6fe8a640517c830e7d17a05e256b7abfbb6e07923a46df5c5fe1c39f78"
   elsif installOS == "macos" && installArch == "x86"
-    sha256 "dc3c48c6ccb688790e8d3cba0f5e56539e5fba191f56bcf158526d17cfb1d8e2"
+    sha256 "c90877bb4ed9bc54c4dd4065c105277529006be31ade988ea671df45b58e5ad5"
   elsif installOS == "linux" && installArch == "arm"
-    sha256 "1665bb406c96652913f2abe7a1565c4ef3dd37c3e0edab1565f84fc1fa99c595"
+    sha256 "d7860986b4b64f8bfa4c19210ff832dad350a1ef9ac0141e01b917541085b5d2"
   elsif installOS == "macos" && installArch == "arm"
-    sha256 "59d0fac840385f08fc8b2d95f4bf7347a58a99439fdef0b65af9a47dabb70eb0"
+    sha256 "04732c9f7aacc0483c454a626db170b97b8b29fe8ccd1194b6b7639380b08850"
   end
 
    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
