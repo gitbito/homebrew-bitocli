@@ -44,7 +44,6 @@ class BitoCli < Formula
    url "https://github.com/gitbito/CLI/releases/download/v#{version}/bito-#{installOS}-#{installArch}.tar.gz"
    
    def install
-    system "brew", "unlink", "bito-cli"
     installOS, installArch = self.class.set_arch_and_os
 
     puts("Post installation script")
